@@ -21,11 +21,11 @@ const AddTodo = () => {
       <Box style={{ background: 'var(--gray-3)', borderRadius: 'var(--radius-3)' }}>
         <Container size="1" minHeight="100px">
           <Box>
-            <Flex mt="5" justify="center">
+            <Flex mt="6" justify="center">
               <Box maxWidth="350px">
                 <TextField.Root size="2" placeholder="Add Todo..." name="text" />
               </Box>
-              <Box maxWidth="250px" gap="3">
+              <Box maxWidth="250px" gap="3" ml="3">
                 <Button size="2" variant="soft" type="submit">
                   Add
                 </Button>

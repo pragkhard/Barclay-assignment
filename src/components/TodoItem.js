@@ -17,13 +17,8 @@ const TodoItem = ({ todo }) => {
 
   return (
     <>
-      {/* <li>
-        <input type="checkbox" checked={todo.completed} onChange={handleToggle} />
-        <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
-        <button onClick={handleDelete}>Delete</button>
-      </li> */}
       <Box maxWidth="600px">
-        <CheckboxCards.Root>
+        <CheckboxCards.Root m="3">
           <CheckboxCards.Item value="1" type="checkbox" onClick={(e) => handleToggle(e)}>
             <Flex direction="column" width="100%">
               <Text weight="bold" style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</Text>
@@ -31,10 +26,10 @@ const TodoItem = ({ todo }) => {
             </Flex>
           </CheckboxCards.Item>
 
-            <Button size="2" variant="soft" type="submit" onClick={handleDelete}>
-              Delete
-            </Button>
-         
+          <Button size="2" variant="soft" type="submit" onClick={handleDelete} mt="2" maxWidth="50px">
+            Delete
+          </Button>
+
         </CheckboxCards.Root>
       </Box>
     </>

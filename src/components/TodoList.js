@@ -14,46 +14,21 @@ const TodoList = () => {
   const filteredTodos =
     filter === 'all' ? todos : filter === 'completed' ? todos.filter((todo) => todo.completed) : todos.filter((todo) => !todo.completed);
 
-  const handleFilterChange = (value) => {
-    dispatch(setFilter(value))
+  const handleFilterChange = (e) => {
+    dispatch(setFilter(e.target.value))
     console.log("dfghjkl")
   };
-  // const handleFilterChange = (value) => {
-  //   // dispatch(setFilter(e.target.value))
-  //   console.log('Filter changed to:', value);
-  //   setFilter(value); // Update the filter state with the selected value
-  //   // Perform any other necessary actions based on the selected value
-  // };
 
   return (
     <div>
-      <select value={filter} onChange={handleFilterChange}>
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="active">Active</option>
-      </select>
-      {/* <Flex gap="3">
-        <DropdownMenu.Root value={filter} onSelect={(value) => handleFilterChange(value)}>
-          <DropdownMenu.Trigger >
-            <Button variant="soft" size="2">
-              Options
-              <DropdownMenu.TriggerIcon />
-            </Button>
-          </DropdownMenu.Trigger>
-          <DropdownMenu.Content size="2">
-            <DropdownMenu.Item value="all" onSelect={(value) => handleFilterChange(value)}>All</DropdownMenu.Item>
-            <DropdownMenu.Separator />
-            <DropdownMenu.Item value="completed" onSelect={(value) => handleFilterChange(value)} >Completed</DropdownMenu.Item>
-            <DropdownMenu.Separator />
-            <DropdownMenu.Item value="active" onSelect={(value) => handleFilterChange(value)} >Active</DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu.Root>
-      </Flex> */}
-      {/* <ul>
-        {filteredTodos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
-        ))}
-      </ul> */}
+      <Box m="6">
+        <select value={filter} onChange={handleFilterChange}>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="active">Active</option>
+        </select>
+      </Box>
+
       <Box maxWidth="600px">
         {filteredTodos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
